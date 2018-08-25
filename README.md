@@ -1,3 +1,15 @@
+README
+======
+Tengo muy poca experiencia con backend en JS y perdí mucho tiempo resolviendo problemas sencillos hoy.
+Solamente está funcionando lo que me alcanzó del frontend. Para ejecutarlo debe ingresar al directorio "/code/deliktum-frontend" y ejecutar el siguiente comando:
+
+ng serve open
+
+No hay mucho funcional , pero creo que pueden mejorar el diseño haciéndolo mucho más sencillo y quitando información innecesaria.
+
+¡Éxitos con la nueva versión!
+
+
 Introduction
 ======
 
