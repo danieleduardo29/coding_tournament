@@ -1,6 +1,5 @@
-<h2>My Reports</h2>
-<ul class="reports">
-	<li *ngFor="let report of reports">
-		<span class="badge">{{report.id}}</span> {{report.name}}
-	</li>
-</ul>
+<agm-map style="height:550px;" [latitude]="-0.1674386" [longitude]="-78.4757904">
+    <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
+        <agm-marker *ngFor="let report of reports" [latitude]="report.location.lat" [longitude]="report.location.lng"></agm-marker>
+    </agm-marker-cluster>
+</agm-map>

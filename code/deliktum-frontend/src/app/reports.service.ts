@@ -12,7 +12,7 @@ export class ReportsService {
 	
 	constructor(private http: HttpClient) {	}
 
-	getAllReports(): Observable<Report[]> {
+	getAllReports(): Report[] {
 		//console.log(BASE_URL);
 		return [
 			{
@@ -21,8 +21,8 @@ export class ReportsService {
 				description: 'Robo a mano armada',
 				datetime: 9846521,
 				location: {
-					lat: 12,
-					lng: 20,
+                    lat: -0.1674380,
+                    lng: -78.4757903,
 				},
 				image: null
 			},
@@ -32,8 +32,8 @@ export class ReportsService {
 				description: 'Hay un borracho tirado en la esquina amenazando a la gente que pasa',
 				datetime: 491651365,
 				location: {
-					lat: 10,
-					lng: 15,
+                    lat: -0.1674385,
+                    lng: -78.4757910,
 				},
 				image: null
 			},
@@ -43,8 +43,8 @@ export class ReportsService {
 				description: 'Un ciclista ha sido atropellado por un vehículo blanco',
 				datetime: 5213547587,
 				location: {
-					lat: 10,
-					lng: 24,
+                    lat: -0.1674375,
+                    lng: -78.4757900,
 				},
 				image: null
 			}

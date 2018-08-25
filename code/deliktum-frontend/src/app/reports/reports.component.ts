@@ -10,13 +10,13 @@ import { ReportsService } from '../reports.service';
 })
 export class ReportsComponent implements OnInit {
 
-	reports: Observable<Report[]>;
+	reports: Report[];
 
 	constructor(private reportsService: ReportsService) { }
   
-	getReports(): Observable<Report[]> {
+	getReports(): Report[] {
 		
-		this.reports = this.reportsService.getAllReports();
+		return this.reportsService.getAllReports();
 	}
 
 	ngOnInit() {

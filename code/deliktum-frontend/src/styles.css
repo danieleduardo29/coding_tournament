@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+#map {
+    height: 100%;
+}
+/* Optional: Makes the sample page fill the window. */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav.navbar {
+    background-color: #452145 !important;
+}
+.navbar-brand {
+    color: #ddd !important;
+}
+.reportar-link {
+    color: #ddd !important;
+    border: #ddd solid 1px;
+    border-radius: 3px;
+    padding-left: 15px !important;
+    padding-right: 15px!important ;
+}
+.reportar-link:hover,
+.reportar-link:active {
+    color: #fff !important;
+    border: #fff solid 1px;
+    background-color: #351135;
+}
+
