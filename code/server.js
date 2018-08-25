@@ -5,10 +5,15 @@ const app = express();
 //Enabling CORS
 const cors = require('cors');
 var corsOptions = {
-  origin: 'http://localhost:4020',
+  origin: '*',
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204 
 }
 app.use(cors(corsOptions));
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.listen(2901, () => {
   console.log('Server started (port 2901)!');
@@ -16,6 +21,7 @@ app.listen(2901, () => {
 
 // GET ALL
 app.route('/api/reports').get((req, res) => {
+  console.log('Serving reports');
   res.send({
     reports: [
 		{
@@ -23,7 +29,10 @@ app.route('/api/reports').get((req, res) => {
 			type: 'Robo',
 			description: 'Robo a mano armada',
 			datetime: 9846521,
-			location: '12,14',
+			location: {
+				lat: 12,
+				lng: 20,
+			},
 			image: null
 		},
 		{
@@ -31,7 +40,10 @@ app.route('/api/reports').get((req, res) => {
 			type: 'Borrachera',
 			description: 'Hay un borracho tirado en la esquina amenazando a la gente que pasa',
 			datetime: 491651365,
-			location: '10,15',
+			location: {
+				lat: 10,
+				lng: 15,
+			},
 			image: null
 		},
 		{
@@ -39,7 +51,10 @@ app.route('/api/reports').get((req, res) => {
 			type: 'Atropellamiento',
 			description: 'Un ciclista ha sido atropellado por un vehículo blanco',
 			datetime: 5213547587,
-			location: '12,14',
+			location: {
+				lat: 10,
+				lng: 24,
+			},
 			image: null
 		}
 	]

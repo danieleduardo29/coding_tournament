@@ -14,11 +14,13 @@ export class ReportsComponent implements OnInit {
 
 	constructor(private reportsService: ReportsService) { }
   
-	getReports(): void {
+	getReports(): Observable<Report[]> {
+		
 		this.reports = this.reportsService.getAllReports();
 	}
 
 	ngOnInit() {
+		this.getReports();
 	}
 
 }

@@ -1,3 +1,6 @@
 <h2>My Reports</h2>
 <ul class="reports">
+	<li *ngFor="let report of reports">
+		<span class="badge">{{report.id}}</span> {{report.name}}
+	</li>
 </ul>
