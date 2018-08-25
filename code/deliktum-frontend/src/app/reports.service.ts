@@ -26,7 +26,7 @@ export class ReportService {
     return this.http.get<Report>('http://localhost:2901/api/reports/' + id);
   }
 
-  insertReport(Report: report): Observable<Report> {
-    return this.http.post<Report>('http://localhost:2901/api/reports/', report);
+  insertReport(Report: Report): Observable<Report> {
+    return this.http.post<Report>('http://localhost:2901/api/reports/', Report);
   }
 }
