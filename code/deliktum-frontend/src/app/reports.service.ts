@@ -1,32 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
+import { Report } from './report';
 
-export interface Report {
-	_id: number,
-	type: string,
-	description: string,
-	datetime: number,
-	location: {
-		lat: number,
-		lng: number,
-	},
-	image: string
-}
+const BASE_URL = 'http://localhost:2901/api/reports';
 
-@Injectable()
-export class ReportService {
-  constructor(private http: HttpClient) {}
+@Injectable({
+	providedIn: 'root',
+})
+export class ReportsService {
+	
+	constructor(private http: HttpClient) {}
 
-  getAllReports(): Observable<Report[]> {
-    return this.http.get<Report[]>('http://localhost:2901/api/reports');
-  }
+	getAllReports(): Observable<Report[]> {
+		console.log('getting reports');
+		let result = this.http.get<Report[]>(BASE_URL);
+		console.log(result);
+		return result;
+	}
 
-  getReport(id: number): Observable<Report> {
-    return this.http.get<Report>('http://localhost:2901/api/reports/' + id);
-  }
+	getReport(id: number): Observable<Report> {
+		return this.http.get<Report>(BASE_URL + id);
+	}
 
-  insertReport(Report: Report): Observable<Report> {
-    return this.http.post<Report>('http://localhost:2901/api/reports/', Report);
-  }
+	insertReport(report: Report): Observable<Report> {
+		return this.http.post<Report>(BASE_URL, report);
+	}
 }

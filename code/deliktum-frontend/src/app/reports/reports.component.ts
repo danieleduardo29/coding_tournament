@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Report } from '../report';
+import { Observable } from 'rxjs/Observable';
+import { ReportsService } from '../reports.service';
 
 @Component({
   selector: 'app-reports',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportsComponent implements OnInit {
 
-  constructor() { }
+	reports: Observable<Report[]>;
 
-  ngOnInit() {
-  }
+	constructor(private reportsService: ReportsService) { }
+  
+	getReports(): void {
+		this.reports = this.reportsService.getAllReports();
+	}
+
+	ngOnInit() {
+	}
 
 }
