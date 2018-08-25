@@ -1,5 +1,59 @@
-<agm-map style="height:550px;" [latitude]="-0.1674386" [longitude]="-78.4757904">
+﻿<agm-map style="height:550px;" [latitude]="-0.1674386" [longitude]="-78.4757904">
     <agm-marker-cluster [imagePath]="'https://googlemaps.github.io/js-marker-clusterer/images/m'">
         <agm-marker *ngFor="let report of reports" [latitude]="report.location.lat" [longitude]="report.location.lng"></agm-marker>
     </agm-marker-cluster>
 </agm-map>
+
+<!-- Modal -->
+<div class="modal fade" id="reportarModal" tabindex="-1" role="dialog" aria-labelledby="reportarModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form>
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reportarModalLabel">Reportar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <textarea class="form-control" id="description" placeholder="Ingrese una descripción" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Tipo</label>
+                        <select class="form-control" id="type" name="type">
+                            <option>Abuso Infantil</option>
+                            <option>Abuso Policial</option>
+                            <option>Asalto</option>
+                            <option>Asesinato</option>
+                            <option>Atropellamiento</option>
+                            <option>Borrachera</option>
+                            <option>Manifestación Violenta</option>
+                            <option>Pelea</option>
+                            <option>Persona Sospechosa</option>
+                            <option>Posible Ladrón</option>
+                            <option>Robo</option>
+                            <option>Secuestro Express</option>
+                            <option>Soborno</option>
+                            <option>Vandalismo</option>
+                            <option>Venta de Drogas</option>
+                            <option>Violencia Escolar</option>
+                            <option>Pandillas Molestando</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="image">Imagen</label>
+                        <input type="file" class="form-control" id="image" placeholder="Seleccione un archivo" value="Seleccionar" />
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar Reporte</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

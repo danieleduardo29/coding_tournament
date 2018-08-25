@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Report } from '../report';
 import { Observable } from 'rxjs/Observable';
 import { ReportsService } from '../reports.service';
